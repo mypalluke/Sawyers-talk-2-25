@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo Script: Sawyer & Uncle Leo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom scrollbar for dark mode */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #111827; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #374151; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #4B5563; 
+        }
+        body {
+            -webkit-tap-highlight-color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-gray-950 text-gray-100 font-sans antialiased min-h-screen pb-12">
+
+    <div class="max-w-2xl mx-auto px-4 sm:px-6 pt-8">
+        
+        <!-- Header Section -->
+        <header class="mb-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-gray-800 pb-6">
+            <div>
+                <h1 class="text-2xl font-bold text-white tracking-tight">Demo Script</h1>
+                <p class="text-gray-400 text-sm mt-1">Sawyer & Uncle Leo (~1m 20s read time)</p>
+            </div>
+            <button onclick="copyScript()" id="copyBtn" class="bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200 flex items-center justify-center gap-2 shadow-sm w-full sm:w-auto">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+                Copy Script
+            </button>
+        </header>
+
+        <!-- Hidden text area for copy functionality -->
+        <textarea id="rawScript" class="sr-only" aria-hidden="true">
+Sawyer: Hi, Uncle Leo.
+
+Leo: Hi, Sawyer, great to see you! It’s so nice of you guys to stop by on your way up to... what was the place called again?
+
+Sawyer: Patterson Bethel. It's the Watchtower Educational Center. We're dropping Hudson off.
+
+Leo: Right, right. What's he going to be doing up there?
+
+Sawyer: Well, they do a lot. They produce videos, music, and artwork for our website and meetings. Actually, they made a really cool picture for a recent meeting. Let me show you... oh, here it is. It's about a guy giving a talk on "family worship"—studying the Bible together. But look at the bottom picture. What do you see?
+
+Leo: Hmm. Looks like that same guy studying the Bible at home with his family.
+
+Sawyer: Exactly. And notice the caption?
+
+Leo: It says, "Jehovah notices and appreciates when we practice what we preach."
+
+Sawyer: Yeah! We were studying how God expects us to be obedient from the heart, not just put on a show. That artwork really helped it click for me. So, Hudson is going to work there to support that kind of teaching all over the world.
+
+Leo: Wow, that’s really neat.
+
+Sawyer: We learn a lot from our meetings. You should come with us sometime.
+
+Leo: You know, I just might check it out one day.
+        </textarea>
+
+        <!-- Dialogue Container -->
+        <main class="space-y-6 flex flex-col" id="dialogue-container">
+            
+            <!-- Sawyer -->
+            <div class="flex flex-col items-start w-full max-w-[90%]">
+                <span class="text-xs font-semibold text-indigo-400 mb-1 ml-1 tracking-wider uppercase">Sawyer</span>
+                <div class="bg-indigo-900/40 border border-indigo-800/50 text-indigo-50 px-5 py-3.5 rounded-2xl rounded-tl-sm shadow-sm leading-relaxed">
+                    Hi, Uncle Leo.
+                </div>
+            </div>
+
+            <!-- Leo -->
+            <div class="flex flex-col items-end w-full max-w-[90%] self-end">
+                <span class="text-xs font-semibold text-emerald-400 mb-1 mr-1 tracking-wider uppercase">Leo</span>
+                <div class="bg-gray-800 border border-gray-700 text-gray-100 px-5 py-3.5 rounded-2xl rounded-tr-sm shadow-sm leading-relaxed">
+                    Hi, Sawyer, great to see you! It’s so nice of you guys to stop by on your way up to... what was the place called again?
+                </div>
+            </div>
+
+            <!-- Sawyer -->
+            <div class="flex flex-col items-start w-full max-w-[90%]">
+                <span class="text-xs font-semibold text-indigo-400 mb-1 ml-1 tracking-wider uppercase">Sawyer</span>
+                <div class="bg-indigo-900/40 border border-indigo-800/50 text-indigo-50 px-5 py-3.5 rounded-2xl rounded-tl-sm shadow-sm leading-relaxed">
+                    Patterson Bethel. It's the Watchtower Educational Center. We're dropping Hudson off.
+                </div>
+            </div>
+
+            <!-- Leo -->
+            <div class="flex flex-col items-end w-full max-w-[90%] self-end">
+                <span class="text-xs font-semibold text-emerald-400 mb-1 mr-1 tracking-wider uppercase">Leo</span>
+                <div class="bg-gray-800 border border-gray-700 text-gray-100 px-5 py-3.5 rounded-2xl rounded-tr-sm shadow-sm leading-relaxed">
+                    Right, right. What's he going to be doing up there?
+                </div>
+            </div>
+
+            <!-- Sawyer -->
+            <div class="flex flex-col items-start w-full max-w-[90%]">
+                <span class="text-xs font-semibold text-indigo-400 mb-1 ml-1 tracking-wider uppercase">Sawyer</span>
+                <div class="bg-indigo-900/40 border border-indigo-800/50 text-indigo-50 px-5 py-3.5 rounded-2xl rounded-tl-sm shadow-sm leading-relaxed">
+                    Well, they do a lot. They produce videos, music, and artwork for our website and meetings. Actually, they made a really cool picture for a recent meeting. Let me show you... oh, here it is. It's about a guy giving a talk on "family worship"—studying the Bible together. But look at the bottom picture. What do you see?
+                </div>
+            </div>
+
+            <!-- Leo -->
+            <div class="flex flex-col items-end w-full max-w-[90%] self-end">
+                <span class="text-xs font-semibold text-emerald-400 mb-1 mr-1 tracking-wider uppercase">Leo</span>
+                <div class="bg-gray-800 border border-gray-700 text-gray-100 px-5 py-3.5 rounded-2xl rounded-tr-sm shadow-sm leading-relaxed">
+                    Hmm. Looks like that same guy studying the Bible at home with his family.
+                </div>
+            </div>
+
+            <!-- Sawyer -->
+            <div class="flex flex-col items-start w-full max-w-[90%]">
+                <span class="text-xs font-semibold text-indigo-400 mb-1 ml-1 tracking-wider uppercase">Sawyer</span>
+                <div class="bg-indigo-900/40 border border-indigo-800/50 text-indigo-50 px-5 py-3.5 rounded-2xl rounded-tl-sm shadow-sm leading-relaxed">
+                    Exactly. And notice the caption?
+                </div>
+            </div>
+
+            <!-- Leo -->
+            <div class="flex flex-col items-end w-full max-w-[90%] self-end">
+                <span class="text-xs font-semibold text-emerald-400 mb-1 mr-1 tracking-wider uppercase">Leo</span>
+                <div class="bg-gray-800 border border-gray-700 text-gray-100 px-5 py-3.5 rounded-2xl rounded-tr-sm shadow-sm leading-relaxed">
+                    It says, "Jehovah notices and appreciates when we practice what we preach."
+                </div>
+            </div>
+
+            <!-- Sawyer -->
+            <div class="flex flex-col items-start w-full max-w-[90%]">
+                <span class="text-xs font-semibold text-indigo-400 mb-1 ml-1 tracking-wider uppercase">Sawyer</span>
+                <div class="bg-indigo-900/40 border border-indigo-800/50 text-indigo-50 px-5 py-3.5 rounded-2xl rounded-tl-sm shadow-sm leading-relaxed">
+                    Yeah! We were studying how God expects us to be obedient from the heart, not just put on a show. That artwork really helped it click for me. So, Hudson is going to work there to support that kind of teaching all over the world.
+                </div>
+            </div>
+
+            <!-- Leo -->
+            <div class="flex flex-col items-end w-full max-w-[90%] self-end">
+                <span class="text-xs font-semibold text-emerald-400 mb-1 mr-1 tracking-wider uppercase">Leo</span>
+                <div class="bg-gray-800 border border-gray-700 text-gray-100 px-5 py-3.5 rounded-2xl rounded-tr-sm shadow-sm leading-relaxed">
+                    Wow, that’s really neat.
+                </div>
+            </div>
+
+            <!-- Sawyer -->
+            <div class="flex flex-col items-start w-full max-w-[90%]">
+                <span class="text-xs font-semibold text-indigo-400 mb-1 ml-1 tracking-wider uppercase">Sawyer</span>
+                <div class="bg-indigo-900/40 border border-indigo-800/50 text-indigo-50 px-5 py-3.5 rounded-2xl rounded-tl-sm shadow-sm leading-relaxed">
+                    We learn a lot from our meetings. You should come with us sometime.
+                </div>
+            </div>
+
+            <!-- Leo -->
+            <div class="flex flex-col items-end w-full max-w-[90%] self-end">
+                <span class="text-xs font-semibold text-emerald-400 mb-1 mr-1 tracking-wider uppercase">Leo</span>
+                <div class="bg-gray-800 border border-gray-700 text-gray-100 px-5 py-3.5 rounded-2xl rounded-tr-sm shadow-sm leading-relaxed">
+                    You know, I just might check it out one day.
+                </div>
+            </div>
+
+        </main>
+        
+        <!-- Footer / End marker -->
+        <div class="mt-12 flex items-center justify-center gap-4">
+            <div class="h-px bg-gray-800 flex-1"></div>
+            <span class="text-gray-500 tracking-widest text-sm uppercase font-semibold">End Scene</span>
+            <div class="h-px bg-gray-800 flex-1"></div>
+        </div>
+
+    </div>
+
+    <script>
+        function copyScript() {
+            const btn = document.getElementById('copyBtn');
+            const originalContent = btn.innerHTML;
+            const textArea = document.getElementById('rawScript');
+            
+            // Make visible temporarily to copy
+            textArea.classList.remove('sr-only');
+            textArea.select();
+            
+            try {
+                // Execute copy command (works well in iframes)
+                document.execCommand('copy');
+                
+                // Show success state
+                btn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Copied!`;
+                btn.classList.replace('bg-indigo-600', 'bg-emerald-600');
+                btn.classList.replace('hover:bg-indigo-500', 'hover:bg-emerald-500');
+                
+                setTimeout(() => {
+                    btn.innerHTML = originalContent;
+                    btn.classList.replace('bg-emerald-600', 'bg-indigo-600');
+                    btn.classList.replace('hover:bg-emerald-500', 'hover:bg-indigo-500');
+                }, 2000);
+            } catch (err) {
+                console.error('Failed to copy text', err);
+            }
+            
+            // Hide again
+            textArea.classList.add('sr-only');
+            // Remove selection
+            window.getSelection().removeAllRanges();
+        }
+    </script>
+</body>
+</html>
+
